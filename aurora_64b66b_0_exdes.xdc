@@ -355,6 +355,14 @@ create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA [get_debug_ports u_ila_0/probe1]
 set_property port_width 32 [get_debug_ports u_ila_0/probe1]
 connect_debug_port u_ila_0/probe1 [get_nets [list {counter[0]} {counter[1]} {counter[2]} {counter[3]} {counter[4]} {counter[5]} {counter[6]} {counter[7]} {counter[8]} {counter[9]} {counter[10]} {counter[11]} {counter[12]} {counter[13]} {counter[14]} {counter[15]} {counter[16]} {counter[17]} {counter[18]} {counter[19]} {counter[20]} {counter[21]} {counter[22]} {counter[23]} {counter[24]} {counter[25]} {counter[26]} {counter[27]} {counter[28]} {counter[29]} {counter[30]} {counter[31]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+set_property port_width 1 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list exdes_reset]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+set_property port_width 1 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list locked]]
 create_debug_core u_ila_1 ila
 set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_1]
 set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_1]
@@ -368,31 +376,11 @@ set_property port_width 1 [get_debug_ports u_ila_1/clk]
 connect_debug_port u_ila_1/clk [get_nets [list aurora_example_0/aurora_64b66b_0_block_i/clock_module_i/ultrascale_tx_userclk_1/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst_0]]
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe0]
 set_property port_width 4 [get_debug_ports u_ila_1/probe0]
-connect_debug_port u_ila_1/probe0 [get_nets [list {aurora_example_0/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/hard_err_i[3]} {aurora_example_0/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/hard_err_i[2]} {aurora_example_0/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/hard_err_i[1]} {aurora_example_0/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/hard_err_i[0]}]]
+connect_debug_port u_ila_1/probe0 [get_nets [list {aurora_example_0/aurora_64b66b_0_block_i/lane_up_i[3]} {aurora_example_0/aurora_64b66b_0_block_i/lane_up_i[2]} {aurora_example_0/aurora_64b66b_0_block_i/lane_up_i[1]} {aurora_example_0/aurora_64b66b_0_block_i/lane_up_i[0]}]]
 create_debug_port u_ila_1 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe1]
 set_property port_width 1 [get_debug_ports u_ila_1/probe1]
 connect_debug_port u_ila_1/probe1 [get_nets [list channel_up_0]]
-create_debug_port u_ila_1 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe2]
-set_property port_width 1 [get_debug_ports u_ila_1/probe2]
-connect_debug_port u_ila_1/probe2 [get_nets [list aurora_example_0/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/global_logic_i/channel_init_sm_i/channel_up_c]]
-create_debug_port u_ila_1 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe3]
-set_property port_width 1 [get_debug_ports u_ila_1/probe3]
-connect_debug_port u_ila_1/probe3 [get_nets [list aurora_example_0/channel_up_i]]
-create_debug_port u_ila_1 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe4]
-set_property port_width 1 [get_debug_ports u_ila_1/probe4]
-connect_debug_port u_ila_1/probe4 [get_nets [list aurora_example_0/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/global_logic_i/channel_init_sm_i/channel_up_rx_c]]
-create_debug_port u_ila_1 probe
-set_property PROBE_TYPE DATA [get_debug_ports u_ila_1/probe5]
-set_property port_width 1 [get_debug_ports u_ila_1/probe5]
-connect_debug_port u_ila_1/probe5 [get_nets [list aurora_example_0/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/channel_up_tx_if]]
-create_debug_port u_ila_1 probe
-set_property PROBE_TYPE DATA [get_debug_ports u_ila_1/probe6]
-set_property port_width 1 [get_debug_ports u_ila_1/probe6]
-connect_debug_port u_ila_1/probe6 [get_nets [list aurora_example_0/aurora_64b66b_0_block_i/soft_err_i]]
 create_debug_core u_ila_2 ila
 set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_2]
 set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_2]
@@ -406,31 +394,11 @@ set_property port_width 1 [get_debug_ports u_ila_2/clk]
 connect_debug_port u_ila_2/clk [get_nets [list aurora_example_1/aurora_64b66b_0_block_i/clock_module_i/ultrascale_tx_userclk_1/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst_0]]
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_2/probe0]
 set_property port_width 4 [get_debug_ports u_ila_2/probe0]
-connect_debug_port u_ila_2/probe0 [get_nets [list {aurora_example_1/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/hard_err_i[3]} {aurora_example_1/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/hard_err_i[2]} {aurora_example_1/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/hard_err_i[1]} {aurora_example_1/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/hard_err_i[0]}]]
+connect_debug_port u_ila_2/probe0 [get_nets [list {aurora_example_1/aurora_64b66b_0_block_i/lane_up_i[3]} {aurora_example_1/aurora_64b66b_0_block_i/lane_up_i[2]} {aurora_example_1/aurora_64b66b_0_block_i/lane_up_i[1]} {aurora_example_1/aurora_64b66b_0_block_i/lane_up_i[0]}]]
 create_debug_port u_ila_2 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_2/probe1]
 set_property port_width 1 [get_debug_ports u_ila_2/probe1]
 connect_debug_port u_ila_2/probe1 [get_nets [list channel_up_1]]
-create_debug_port u_ila_2 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_2/probe2]
-set_property port_width 1 [get_debug_ports u_ila_2/probe2]
-connect_debug_port u_ila_2/probe2 [get_nets [list aurora_example_1/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/global_logic_i/channel_init_sm_i/channel_up_c]]
-create_debug_port u_ila_2 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_2/probe3]
-set_property port_width 1 [get_debug_ports u_ila_2/probe3]
-connect_debug_port u_ila_2/probe3 [get_nets [list aurora_example_1/channel_up_i]]
-create_debug_port u_ila_2 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_2/probe4]
-set_property port_width 1 [get_debug_ports u_ila_2/probe4]
-connect_debug_port u_ila_2/probe4 [get_nets [list aurora_example_1/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/global_logic_i/channel_init_sm_i/channel_up_rx_c]]
-create_debug_port u_ila_2 probe
-set_property PROBE_TYPE DATA [get_debug_ports u_ila_2/probe5]
-set_property port_width 1 [get_debug_ports u_ila_2/probe5]
-connect_debug_port u_ila_2/probe5 [get_nets [list aurora_example_1/aurora_64b66b_0_block_i/aurora_64b66b_0_i/inst/channel_up_tx_if]]
-create_debug_port u_ila_2 probe
-set_property PROBE_TYPE DATA [get_debug_ports u_ila_2/probe6]
-set_property port_width 1 [get_debug_ports u_ila_2/probe6]
-connect_debug_port u_ila_2/probe6 [get_nets [list aurora_example_1/aurora_64b66b_0_block_i/soft_err_i]]
 set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
 set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
